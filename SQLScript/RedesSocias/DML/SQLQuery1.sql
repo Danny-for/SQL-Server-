@@ -1,0 +1,33 @@
+CREATE DATABASE db_RedesSociasS
+
+USE db_RedesSociasS
+
+
+CREATE TABLE Usuarios(
+	Id INT PRIMARY KEY NOT NULL ,
+	Nome VARCHAR(100) NOT NULL , 
+	Senha FLOAT  NOT NULL ,
+)
+
+CREATE TABLE Postagens (
+	Id INT PRIMARY KEY NOT NULL ,
+	Nome VARCHAR(50) NOT NULL,
+	Descricao VARCHAR(50) NOT NULL ,
+	Imagem VARCHAR(50) NOT NULL ,
+
+	FK_Usuario INT NOT NULL ,
+	FOREIGN KEY (FK_Usuario) REFERENCES  Usuarios (Id) 
+
+)
+
+CREATE TABLE Seguidores (
+	Id INT PRIMARY KEY NOT NULL,
+	Curtir VARCHAR(100) NOT NULL,
+	Comentar VARCHAR(100) NOT NULL,
+	FK_Utilizador INT NOT NULL ,
+	FK_Post INT NOT NULL,
+
+	FOREIGN KEY (FK_Utilizador) REFERENCES Usuarios (Id),
+	FOREIGN KEY (FK_post) REFERENCES Postagens (Id)
+)
+

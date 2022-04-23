@@ -33,3 +33,4 @@ VALUES
 SELECT * FROM Produtos
 WHERE Preco BETWEEN 5 AND 15
 
+SELECT * FROM  Produtos
