@@ -1,0 +1,30 @@
+CREATE  DATABASE db_EcommerceE
+
+USE db_EcommerceE
+
+CREATE TABLE Usuarios(
+	Id INT PRIMARY KEY NOT NULL, 
+	Nome VARCHAR(50) NOT NULL ,
+	Usuario VARCHAR(50) NOT NULL,
+	Senha INT NOT NULL
+)
+
+CREATE TABLE Produtos(
+	Id INT PRIMARY KEY NOT NULL ,
+	Produto VARCHAR(50) NOT NULL,
+	Descricao VARCHAR(50) NOT NULL,
+	Valor FLOAT NOT NULL ,
+	Imagem  VARCHAR(100) NOT NULL 
+)
+
+CREATE TABLE Compras (
+	FK_Usuario INT NOT NULL ,
+	FK_Produto INT NOT NULL ,
+	FOREIGN KEY (FK_Usuario) REFERENCES Usuarios(Id),
+	FOREIGN KEY (FK_Produto) REFERENCES Produtos(Id)
+)
+
+
+
+
+
