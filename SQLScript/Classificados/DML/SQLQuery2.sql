@@ -15,6 +15,9 @@ VALUES
 (3, 'Cama beliche' , 'URL__imagem' ,199.99 ,'Cama beliche preta' ,  2 )
 
 
+--- ALTERAÇÃO 
+
+
 SELECT * FROM Usuario
 WHERE Email LIKE '%e%'
 
@@ -22,9 +25,24 @@ WHERE Email LIKE '%e%'
 SELECT
 Usuario.Senha AS Senhas ,
 Anuncios.Preco AS preços
-FROM Usuario -- ESQUERDA
-LEFT JOIN Anuncios -- DIREITA
+FROM Usuario 
+RIGHT JOIN Anuncios
 ON Usuario.Senha = Anuncios.FK_Usuarios;
+
+
+SELECT COUNT(Anuncios.Descricao)   AS 'filtro de coluna'
+FROM  Anuncios 
+WHERE Anuncios.Descricao LIKE '%o%';
+
+
+ALTER TABLE  Usuario ADD Pagamento VARCHAR(100)NULL;
+
+
+
+
+
+
+
 
 
 

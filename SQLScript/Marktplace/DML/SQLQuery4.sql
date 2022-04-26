@@ -1,9 +1,3 @@
--- DML
--- INSERT
--- SELECT
--- UPDATE
--- DELETE
-
 
 INSERT INTO Usuario
 VALUES
@@ -30,6 +24,8 @@ VALUES
 (3, 2),
 (1, 2)
 
+--- Alteração
+
 SELECT * FROM Produtos
 WHERE  Descricao LIKE '%K%'
 
@@ -38,8 +34,11 @@ FROM Produtos
 LEFT JOIN Usuario ON Usuario.Nome = Produtos.Descricao
 ORDER BY Produtos.NomeProduto;
 
+SELECT COUNT(Categorias.Descricao) AS  ' FILTRO DE CONTAGEM'
+FROM Categorias
+WHERE Categorias.Descricao LIKE ('%o%');
+
 
 SELECT * FROM Produtos
 DELETE Produtos
 
--- não feito ainda 
