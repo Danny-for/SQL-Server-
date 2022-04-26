@@ -15,10 +15,19 @@ INSERT INTO Compras
 values
 (1,2),
 (3,1),
-(2,3)
+(2,3);
 
-SELECT * FROM Usuarios
-WHERE Usuario LIKE '%rafa%'
+
+SELECT Usuarios.Nome ,Produtos.Produto
+FROM Usuarios
+INNER JOIN Produtos ON  Usuarios.Nome = Produtos.Produto;
+
+SELECT * FROM  Produtos
+WHERE Valor BETWEEN  500 AND 1000;
+
+
+
+
 
 
 SELECT Usuarios.Nome, SUM(Produtos.Valor) AS Total

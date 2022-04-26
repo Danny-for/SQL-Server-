@@ -31,6 +31,15 @@ VALUES
 (1, 2)
 
 SELECT * FROM Produtos
-WHERE Preco BETWEEN 5 AND 15
+WHERE  Descricao LIKE '%K%'
 
-SELECT * FROM  Produtos
+SELECT Produtos.NomeProduto, Usuario.Nome
+FROM Produtos
+LEFT JOIN Usuario ON Usuario.Nome = Produtos.Descricao
+ORDER BY Produtos.NomeProduto;
+
+
+SELECT * FROM Produtos
+DELETE Produtos
+
+-- não feito ainda 
